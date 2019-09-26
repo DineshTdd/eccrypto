@@ -1,10 +1,10 @@
 const express = require('express');
-const eci = require('./ecies');
+const path = require('path');
+
 const app = express();
 
-app.get('/', (req,res) => {
-    res.send('Hello world');
-    app.use(eci);
-});
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/'));
 
-app.listen(4125, () => console.log('Listening on port 4125...'));
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 4125);
