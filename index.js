@@ -12,16 +12,13 @@ app.use((req, res, next)=> {
 });
 
 app.get('/', (req,res) => {
-    res.send('Hello world');
     console.log('in ECC');
  
   var privateKeyA = eccrypto.generatePrivate();
   var publicKeyA = eccrypto.getPublic(privateKeyA);
   var privateKeyB = eccrypto.generatePrivate();
   var publicKeyB = eccrypto.getPublic(privateKeyB);
-    
-    res.send("privatekeyB "+ privateKeyB.toString('hex'));
-    res.send("privatekeyA "+privateKeyA.toString('hex'));
+    res.send('Hello world'+privateKeyB.toString('hex'));
    
   // Encrypting the message for B.
   eccrypto.encrypt(publicKeyB, Buffer.from("msg to b")).then(function(encrypted) {
