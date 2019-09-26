@@ -20,8 +20,8 @@ app.get('/', (req,res) => {
   var privateKeyB = eccrypto.generatePrivate();
   var publicKeyB = eccrypto.getPublic(privateKeyB);
     
-    res.send("privatekeyB", privateKeyB.toString('hex'));
-    res.send("privatekeyA", privateKeyA.toString('hex'));
+    res.send("privatekeyB "+ privateKeyB.toString('hex'));
+    res.send("privatekeyA "+privateKeyA.toString('hex'));
    
   // Encrypting the message for B.
   eccrypto.encrypt(publicKeyB, Buffer.from("msg to b")).then(function(encrypted) {
