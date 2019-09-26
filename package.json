@@ -2,16 +2,23 @@
   "name": "eccrypto",
   "version": "1.0.0",
   "description": "",
-  "main": "ecies.js",
+  "engines": {
+     "node": "11.10.1",
+    "npm": "6.7.0"
+  },
   "dependencies": {
     "eccrypto": "^1.1.1",
     "ecdh": "^0.1.1",
     "express": "^4.17.1",
-    "secp256k1": "^3.7.1"
+    "secp256k1": "^3.7.1",
+    "nan":"^2.14.0",
+    "acorn": "^7.1.0",
+    "es6-promise": "^4.2.8"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC"
