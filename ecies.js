@@ -13,6 +13,7 @@ function eci (req, res, next) {
     // B decrypting the message.
     eccrypto.decrypt(privateKeyB, encrypted).then(function(plaintext) {
       res.send("Message to part B:", plaintext.toString());
+      console.log("Message to part B:", plaintext.toString());
     });
   });
    
@@ -21,6 +22,7 @@ function eci (req, res, next) {
     // A decrypting the message.
     eccrypto.decrypt(privateKeyA, encrypted).then(function(plaintext) {
       res.send("Message to part A:", plaintext.toString());
+      console.log("Message to part A:", plaintext.toString());
     });
   });
   
