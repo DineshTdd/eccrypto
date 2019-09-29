@@ -1,2 +1,2 @@
 # eccrypto
-trial and error
+working with eccrypto package
