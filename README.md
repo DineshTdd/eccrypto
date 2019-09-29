@@ -1,2 +1,2 @@
 # eccrypto
-working with eccrypto package
+working with eccrypto and cryptoJS packages
