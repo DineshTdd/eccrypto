@@ -27,7 +27,7 @@ function eci (req, res, next) {
   
 res.send(result);
   
-next();
+// next();
 }
 
 module.exports = eci;
