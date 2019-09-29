@@ -33,7 +33,7 @@ var result="";
     // A decrypting the message.
     eccrypto.decrypt(privateKeyA, encrypted).then(function(plaintext) {
       result+="</h1></div><div><h1>Message to part A:"+plaintext.toString()+'</h1></div>';
-      res.send('<div><h1>hello</h1></div><div><h1>Eccrypto working!</h1></div><div><h1>'+result+'<div><h1>CryptoJS working!</h1></div><div><h1>'+decryptedData+'</h1></div>');
+      res.send('<div><h1>hello</h1></div><div><h1>Eccrypto working!</h1></div><div><h1>'+result+'<div><h1>CryptoJS working!</h1></div><div><h1>'+JSON.stringify(decryptedData)+'</h1></div>');
     });
 
   });
