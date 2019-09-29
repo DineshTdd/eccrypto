@@ -12,33 +12,8 @@ app.use((req, res, next)=> {
 });
 
 app.get('/', (req,res) => {
-    console.log('in ECC');
- 
-  var privateKeyA = eccrypto.generatePrivate();
-  var publicKeyA = eccrypto.getPublic(privateKeyA);
-  var privateKeyB = eccrypto.generatePrivate();
-  var publicKeyB = eccrypto.getPublic(privateKeyB);
-    res.send('Hello world'+privateKeyB.toString('hex'));
-   
-  // Encrypting the message for B.
-  eccrypto.encrypt(publicKeyB, Buffer.from("msg to b")).then(function(encrypted) {
-    // B decrypting the message.
-    eccrypto.decrypt(privateKeyB, encrypted).then(function(plaintext) {
-        console.log("Message to part B:", plaintext.toString(),"privB",privateKeyB.toString('hex'));
-    });
-  });
- 
-   
-  // Encrypting the message for A.
-  eccrypto.encrypt(publicKeyA, Buffer.from("msg to a")).then(function(encrypted) {
-    // A decrypting the message.
-    eccrypto.decrypt(privateKeyA, encrypted).then(function(plaintext) {
-        // res.status(200).send("Message to part A:", plaintext.toString());
-        console.log("Message to part A:",plaintext.toString(),"privA",privateKeyA.toString('hex'));
-    });
-  });
-  
-    // app.use(eci);
+  app.use(eci);
+
 });
 
 
