@@ -12,10 +12,10 @@ app.use((req, res, next)=> {
 });
 
 app.get('/', (req,res) => {
-  app.use(eci);
+res.send('Hello world!');
 
 });
-
+  app.use(eci);
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 4125);
