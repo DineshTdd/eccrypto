@@ -41,10 +41,10 @@ var result="";
   var data = [{"id": "1","name":"john","card":"1234123412341234"}]
 
 // Encrypt
-var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), privateKeyA.toString('hex')+publicKeyA.toString('hex')+privateKeyB.toString()+publicKeyB.toString());
+var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data),"God is Great" );
  
 // Decrypt
-var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), privateKeyA.toString('hex')+publicKeyA.toString('hex')+privateKeyB.toString()+publicKeyB.toString());
+var bytes  = CryptoJS.AES.decrypt(ciphertext.toString(), "God is Great");
 var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
 }
